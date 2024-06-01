@@ -19,9 +19,11 @@ library common;
 import 'dart:async';
 import 'package:js/js_util.dart';
 import 'dart:typed_data';
-import 'dart:html' show window;
+import 'dart:html' show WorkerGlobalScope;
 import 'jsonwebkey.dart' show JsonWebKey, RsaOtherPrimesInfo;
 export 'jsonwebkey.dart' show JsonWebKey;
+
+final window = WorkerGlobalScope.instance;
 
 /// Constructor for a Javascript `Array`.
 final _array = getProperty(window, 'Array');
